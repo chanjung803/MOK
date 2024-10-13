@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#570328">
+
+        <Button
+            android:id="@+id/BtnReturnToDay"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="이전" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="강의실 예약하기"
+            android:textColor="#ffffff"
+            android:textSize="20dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="*4층은 전부 다 컴퓨터실 입니다.\n A101호는 넓은 책상이있어 6인이상 앉을 수 있는 좌석입니다."
+        android:textSize="12dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A건물"
+        android:gravity="center_horizontal"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TableRow>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum0"
+                android:text="A401"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum1"
+                android:text="A402"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum2"
+                android:text="A403"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum3"
+                android:text="A404"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum4"
+                android:text="A301"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum5"
+                android:text="A302"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum6"
+                android:text="A303"/>
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum7"
+                android:text="A201"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum8"
+                android:text="A202"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum9"
+                android:text="A203"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum10"
+                android:text="A204"/>
+
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum11"
+                android:text="A101"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum12"
+                android:text="A102"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum13"
+                android:text="A103"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/BtnNum14"
+                android:text="A104"/>
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center_horizontal"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/Date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="선택한 날짜와 시간:" />
+
+            <TextView
+                android:id="@+id/tvYear2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="0000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="년" />
+
+            <TextView
+                android:id="@+id/tvMonth2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="00" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="월" />
+
+            <TextView
+                android:id="@+id/tvDay2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="00" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="일" />
+
+            <TextView
+                android:id="@+id/tvHour2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="00" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="시" />
+
+            <TextView
+                android:id="@+id/tvMinute2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="00" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="분" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="선택한 강의실: " />
+            <TextView
+                android:id="@+id/Seat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="인원 수: " />
+            <TextView
+                android:id="@+id/Personnel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/BtnInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="예약자 정보 입력하기" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="성함: " />
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="연락처: " />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/BtnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="다음 단계로" />
+
+    </LinearLayout>
+
+</LinearLayout>

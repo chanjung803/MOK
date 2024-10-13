@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#570328">
+
+        <Button
+            android:id="@+id/BtnBackNotification"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:text="←"
+            android:backgroundTint="#E0E0E0"
+            android:textColor="#570328"
+            android:textSize="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="학과 공지"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <!-- 상단 검색 바 -->
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="공지 검색" />
+
+    <!-- 공지 목록 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/noticeRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical" />
+
+    <!-- 공지 추가 버튼 (옵션: 관리자가 사용할 수 있는 경우) -->
+    <Button
+        android:id="@+id/addNoticeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="공지 추가"
+        android:textSize="16sp"
+        android:backgroundTint="#FF9800"
+        android:textColor="#ffffff"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" /> <!-- 관리자가 아닐 때는 숨김 -->
+</LinearLayout>

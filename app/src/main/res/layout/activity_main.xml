@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"/>
+
+    <ImageView
+        android:layout_width="148dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/mokicon" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="목관리"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="목원대 컴퓨터공학과"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <android.widget.Button
+        android:id="@+id/btnReserveClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="강의실 예약"
+        android:background="#570328"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="9dp"/>
+
+    <android.widget.Button
+        android:id="@+id/btnReserveFabLab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="팹랩 예약"
+        android:background="#570328"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="9dp"/>
+
+    <android.widget.Button
+        android:id="@+id/btnSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="설정"
+        android:background="#570328"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="9dp"/>
+
+    <!-- QR 및 반납 버튼을 수평으로 배치 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"> <!-- layout_gravity로 수평 중앙 정렬 -->
+
+        <!-- QR 버튼 -->
+        <android.widget.Button
+            android:id="@+id/btnQR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="QR"
+            android:background="#570328"
+            android:textColor="#ffffff"
+            android:layout_marginEnd="9dp"/>
+
+        <!-- 반납 버튼 -->
+        <android.widget.Button
+            android:id="@+id/btnReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="반납"
+            android:background="#570328"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/footerTextView"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#570328"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:layout_gravity="bottom"
+        android:text="Footer Text" />
+
+</LinearLayout>

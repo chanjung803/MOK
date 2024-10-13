@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 책 카테고리 리스트 정의 -->
+    <string-array name="category_list">
+        <item>1학년</item>
+        <item>2학년</item>
+        <item>3학년</item>
+        <item>4학년</item>
+        <item>기타</item>
+    </string-array>
+</resources>

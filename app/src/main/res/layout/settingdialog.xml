@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.widget.Button
+        android:id="@+id/dlgMarket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="알림 설정"
+        android:background="#570328"
+        android:textColor="#ffffff"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"/>
+
+    <android.widget.Button
+        android:id="@+id/dlgLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="언어 설정"
+        android:background="#570328"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="5dp"/>
+
+    <android.widget.Button
+        android:id="@+id/dlgAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="계정 설정"
+        android:background="#570328"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="5dp"/>
+
+    <android.widget.Button
+        android:id="@+id/dlgInquiry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="문의하기"
+        android:background="#570328"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="5dp"/>
+
+    <android.widget.Button
+        android:id="@+id/dlgCredits"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="크레딧"
+        android:background="#570328"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="5dp"/>
+
+    <android.widget.Button
+        android:id="@+id/dlgVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="v1.0.0-alpha"
+        android:background="#570328"
+        android:textColor="#ffffff"
+        android:layout_marginBottom="5dp"/>
+
+
+</LinearLayout>
