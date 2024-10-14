@@ -79,8 +79,13 @@ public class ReserveInfoActivity extends AppCompatActivity {
             // 예약 완료 메시지
             Toast.makeText(ReserveInfoActivity.this, "예약이 완료되었습니다.", Toast.LENGTH_SHORT).show();
 
-            // MainActivity로 이동
+            // 예약한 정보를 Intent로 MainActivity에 전달
             Intent intent1 = new Intent(ReserveInfoActivity.this, MainActivity.class);
+            intent1.putExtra("selectedDate", tvCurrentDate.getText().toString());
+            intent1.putExtra("selectedRoom", selectedRoom);
+            intent1.putExtra("selectedTime", selectedTime);
+
+            // MainActivity로 이동
             startActivity(intent1);
             finish(); // 현재 액티비티 종료
         });
