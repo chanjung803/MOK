@@ -6,31 +6,45 @@
     android:padding="10dp"
     android:background="?android:attr/selectableItemBackground">
 
-    <!-- 상단 뒤로가기 버튼과 날짜 표시 -->
+    <!-- 상단 뒤로가기 버튼 -->
+    <Button
+        android:id="@+id/btnBackClass"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:text="←"
+        android:backgroundTint="#E0E0E0"
+        android:textColor="#570328"
+        android:textSize="20dp"
+        android:layout_gravity="start" />
+
+    <!-- 현재 날짜와 시간 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal">
 
-        <!-- 뒤로가기 버튼 -->
-        <Button
-            android:id="@+id/BtnBackClass"
-            android:layout_width="64dp"
-            android:layout_height="wrap_content"
-            android:text="←"
-            android:backgroundTint="#E0E0E0"
-            android:textColor="#570328"
-            android:textSize="20dp" />
-
-        <!-- 현재 날짜 표시할 TextView -->
         <TextView
             android:id="@+id/tvCurrentDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="2024년 10월 07일 (월요일)"
             android:textSize="18sp"
+            android:textStyle="bold"
             android:textColor="#000000"
-            android:paddingStart="16dp"
-            android:gravity="center_vertical" />
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/tvCurrentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15:30:00"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#570328"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -342,14 +356,4 @@
         android:orientation="vertical">
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/footerTextView2"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="#570328"
-        android:gravity="center"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:layout_gravity="bottom"
-        android:text="Footer Text" />
 </LinearLayout>

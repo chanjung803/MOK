@@ -6,6 +6,17 @@
     android:padding="16dp"
     android:gravity="center_horizontal">
 
+    <!-- 상단에 뒤로가기 버튼 -->
+    <Button
+        android:id="@+id/btnBackReserve"
+        android:layout_width="64dp"
+        android:layout_height="wrap_content"
+        android:text="←"
+        android:backgroundTint="#E0E0E0"
+        android:textColor="#570328"
+        android:textSize="20dp"
+        android:layout_gravity="start" />
+
     <!-- 현재 날짜를 표시할 TextView -->
     <TextView
         android:id="@+id/tvCurrentDate"
@@ -14,7 +25,7 @@
         android:text="2024-10-07 월요일"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp" />
 
     <!-- 선택된 호수와 시간을 표시할 TextView -->
     <TextView
@@ -24,7 +35,8 @@
         android:text="D422호 09:00"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:textColor="#941934" />
 
     <!-- 인원 선택 Spinner -->
     <TextView
@@ -40,23 +52,50 @@
         android:layout_height="wrap_content"
         android:entries="@array/person_count_array" />
 
-    <!-- 인원 정보를 입력할 LinearLayout (동적으로 EditText를 추가할 곳) -->
+    <!-- Scrollable 영역 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp">
+
+        <!-- 인원 정보를 입력할 LinearLayout -->
+        <LinearLayout
+            android:id="@+id/linearLayoutPersonInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <!-- 예약 안내문 박스 -->
     <LinearLayout
-        android:id="@+id/linearLayoutPersonInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="16dp" />
+        android:padding="12dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/border_red">
 
-    <!-- 예약 안내문 버튼 -->
-    <Button
-        android:id="@+id/btnReservationGuide"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="예약 안내문"
-        android:textSize="16sp"
-        android:textColor="#000000"
-        android:layout_marginTop="24dp" />
+        <TextView
+            android:id="@+id/tvNotice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="예약 시 주의사항"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="#570328" />
+
+        <TextView
+            android:id="@+id/tvNoticeContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1. 예약한 자리는 깨끗하게 사용해주세요.\n2. 물품을 훼손하거나 분실하지 않도록 주의해주세요.\n3. 반납 시 촬영 협조는 필수입니다.\n4. 예약 인원 중 타과 학생이 포함된 경우 예약이 불가합니다."
+            android:textSize="14sp"
+            android:lineSpacingExtra="4dp"
+            android:textColor="#757575" />
+    </LinearLayout>
 
     <!-- 예약 확정 버튼 -->
     <Button
@@ -68,15 +107,4 @@
         android:textColor="#FFFFFF"
         android:backgroundTint="#570328"
         android:layout_marginTop="8dp" />
-
-    <!-- 안내문 텍스트 -->
-    <TextView
-        android:id="@+id/tvNotice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="인원수를 설정하면 해당 인원수만큼 이름, 학번 란이 생긴다."
-        android:textSize="12sp"
-        android:textColor="#757575"
-        android:layout_marginTop="16dp" />
-
 </LinearLayout>

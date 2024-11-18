@@ -1,7 +1,6 @@
 package kr.co.example.hello;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,18 +21,18 @@ public class ReserveInfoActivity extends AppCompatActivity {
 
     private Spinner spinnerPersonCount;
     private LinearLayout linearLayoutPersonInfo;
-    private int selectedPersonCount = 1; // 기본값
-    private int availableSeats; // 예약 가능 인원 변수
-    private SharedPreferences sharedPreferences;
-
-    private TextView tvRoomAndTime; // 호수와 시간을 표시할 TextView
-    private TextView tvCurrentDate; // 현재 날짜를 표시할 TextView
-    private String selectedRoom, selectedTime; // Intent로 전달받은 호수와 시간
+    private TextView tvRoomAndTime;
+    private TextView tvCurrentDate;
+    private String selectedRoom, selectedTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.reserveinfo);  // reserveinfo.xml과 연결
+
+        // 뒤로가기 버튼 설정
+        Button btnBackReserve = findViewById(R.id.btnBackReserve);
+        btnBackReserve.setOnClickListener(v -> finish()); // 현재 액티비티 종료
 
         // Intent로 전달받은 선택된 호수와 시간 정보를 가져오기
         Intent intent = getIntent();
@@ -48,10 +47,6 @@ public class ReserveInfoActivity extends AppCompatActivity {
         tvCurrentDate = findViewById(R.id.tvCurrentDate);
         setCurrentDate(); // 현재 날짜 설정
 
-        // SharedPreferences 초기화 (예약 가능 인원 값을 유지하기 위해 사용)
-        sharedPreferences = getSharedPreferences("ReservationPrefs", MODE_PRIVATE);
-        availableSeats = sharedPreferences.getInt("availableSeats", 0); // 기본값 0
-
         // Spinner와 동적으로 입력할 LinearLayout 연결
         spinnerPersonCount = findViewById(R.id.spinnerPersonCount);
         linearLayoutPersonInfo = findViewById(R.id.linearLayoutPersonInfo);
@@ -60,7 +55,7 @@ public class ReserveInfoActivity extends AppCompatActivity {
         spinnerPersonCount.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                selectedPersonCount = position + 1;  // 선택된 인원수 (1~4)
+                int selectedPersonCount = position + 1;  // 선택된 인원수 (1~4)
                 updatePersonFields(selectedPersonCount);
             }
 
@@ -73,9 +68,6 @@ public class ReserveInfoActivity extends AppCompatActivity {
         // 예약 확정 버튼 클릭 시
         Button btnConfirmReservation = findViewById(R.id.btnConfirmReservation);
         btnConfirmReservation.setOnClickListener(v -> {
-            // 인원수를 선택한 만큼 예약 가능 인원을 증가시키고 저장
-            increaseAvailableSeats(selectedPersonCount);
-
             // 예약 완료 메시지
             Toast.makeText(ReserveInfoActivity.this, "예약이 완료되었습니다.", Toast.LENGTH_SHORT).show();
 
@@ -108,14 +100,6 @@ public class ReserveInfoActivity extends AppCompatActivity {
             etStudentId.setHint("학번 " + (i + 1));
             linearLayoutPersonInfo.addView(etStudentId);
         }
-    }
-
-    // 예약 가능 인원을 증가시키고 SharedPreferences에 저장
-    private void increaseAvailableSeats(int addedSeats) {
-        availableSeats += addedSeats; // 인원 수만큼 증가
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt("availableSeats", availableSeats);
-        editor.apply();  // 변경사항 적용
     }
 
     // 현재 날짜를 설정하는 메서드

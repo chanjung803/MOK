@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 예약 정보가 있을 경우 Footer에 표시
         if (selectedDate != null && selectedRoom != null && selectedTime != null) {
-            footerTextView.setText("예약 정보: " + selectedDate + " " + selectedRoom + " " + selectedTime);
+            footerTextView.setText(selectedDate + " " + selectedRoom + " " + selectedTime);
         }
 
         // 강의실 예약 버튼 클릭 시 ClassChoiceActivity로 바로 이동
