@@ -2,6 +2,7 @@ package kr.co.example.hello;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -93,11 +95,23 @@ public class ReserveInfoActivity extends AppCompatActivity {
             // 이름 입력 EditText
             EditText etName = new EditText(this);
             etName.setHint("이름 " + (i + 1));
+            etName.setFocusable(true);
+            etName.setFocusableInTouchMode(true);
+            etName.setInputType(InputType.TYPE_CLASS_TEXT);
+            etName.setBackgroundResource(android.R.drawable.edit_text);
+            etName.setTextColor(ContextCompat.getColor(this, android.R.color.black)); // 텍스트 색상 설정
+            etName.setHintTextColor(ContextCompat.getColor(this, android.R.color.darker_gray)); // 힌트 색상 설정
             linearLayoutPersonInfo.addView(etName);
 
             // 학번 입력 EditText
             EditText etStudentId = new EditText(this);
             etStudentId.setHint("학번 " + (i + 1));
+            etStudentId.setFocusable(true);
+            etStudentId.setFocusableInTouchMode(true);
+            etStudentId.setInputType(InputType.TYPE_CLASS_NUMBER);
+            etStudentId.setBackgroundResource(android.R.drawable.edit_text);
+            etStudentId.setTextColor(ContextCompat.getColor(this, android.R.color.black)); // 텍스트 색상 설정
+            etStudentId.setHintTextColor(ContextCompat.getColor(this, android.R.color.darker_gray)); // 힌트 색상 설정
             linearLayoutPersonInfo.addView(etStudentId);
         }
     }

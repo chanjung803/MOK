@@ -23,7 +23,10 @@
             android:label="Third Table pick" />
         <activity android:name=".MarketActivity"></activity>
         <activity android:name=".NotificationActivity"></activity>
-        <activity android:name=".ReserveInfoActivity"></activity>
+        <activity
+            android:name=".ReserveInfoActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
         <activity
             android:name=".ConfirmActivity"
             android:label="Fourth Confirm" />
