@@ -1,40 +1,48 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="10dp"
+    android:padding="16dp"
     android:background="?android:attr/selectableItemBackground">
 
-    <!-- 상단 뒤로가기 버튼 -->
-    <Button
-        android:id="@+id/btnBackClass"
-        android:layout_width="64dp"
-        android:layout_height="wrap_content"
-        android:text="←"
-        android:backgroundTint="#E0E0E0"
-        android:textColor="#570328"
-        android:textSize="20dp"
-        android:layout_gravity="start" />
-
-    <!-- 현재 날짜와 시간 -->
     <LinearLayout
+        android:id="@+id/containerLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="8dp"
-        android:gravity="center_horizontal">
+        android:padding="10dp"
+        android:background="#FFFFFF">
 
-        <TextView
-            android:id="@+id/tvCurrentDate"
-            android:layout_width="wrap_content"
+        <!-- 상단 레이아웃 (뒤로가기 버튼 + 현재 날짜) -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="2024년 10월 07일 (월요일)"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:layout_gravity="center" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="8dp">
 
+            <!-- 뒤로가기 버튼 -->
+            <Button
+                android:id="@+id/btnBackClass"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:text="←"
+                android:backgroundTint="#E0E0E0"
+                android:textColor="#570328"
+                android:textSize="20dp" />
+
+            <!-- 현재 날짜 -->
+            <TextView
+                android:id="@+id/tvCurrentDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2024년 10월 07일 (월요일)"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
+
+        <!-- 현재 시간을 표시할 TextView -->
         <TextView
             android:id="@+id/tvCurrentTime"
             android:layout_width="wrap_content"
@@ -45,315 +53,6 @@
             android:textColor="#570328"
             android:layout_gravity="center"
             android:layout_marginTop="4dp" />
+
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
-        <!-- 강의실 이름 -->
-        <TextView
-            android:id="@+id/tvD422"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="D422호"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <!-- Schedule ImageButton -->
-        <ImageButton
-            android:id="@+id/btnD422Schedule"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/schedule"
-            android:contentDescription="시간표"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:layout_marginStart="8dp" />
-
-        <!-- Drawing ImageButton -->
-        <ImageButton
-            android:id="@+id/btnD422Drawing"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:src="@drawable/drawing"
-            android:contentDescription="도면"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:layout_marginStart="8dp" />
-    </LinearLayout>
-
-    <!-- HorizontalScrollView로 시간 버튼들을 가로 스크롤 가능하게 만듦 -->
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none">
-
-        <!-- 시간 선택 버튼들을 가로로 배치 -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingTop="8dp">
-
-            <Button
-                android:id="@+id/btnD422Time0900"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="09:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD422Time1000"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD422Time1100"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="11:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD422Time1200"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD422Time1300"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="13:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD422Time1400"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="14:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD422Time1500"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="15:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD422Time1600"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="16:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD422Time1700"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="17:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD422Time1800"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="18:00"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <!-- 예약 가능 인원 -->
-    <TextView
-        android:id="@+id/tvD422Seats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="예약 가능 인원: 0/30"
-        android:textSize="14sp"
-        android:textColor="#757575" />
-
-    <!-- 두번째 강의실: D423 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical">
-        <!-- 강의실 이름 -->
-        <TextView
-            android:id="@+id/tvD423"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="D423호"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-
-        <!-- Schedule ImageButton -->
-        <ImageButton
-            android:id="@+id/btnD423Schedule"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/schedule"
-            android:contentDescription="시간표"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:layout_marginStart="8dp" />
-
-        <!-- Drawing ImageButton -->
-        <ImageButton
-            android:id="@+id/btnD423Drawing"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:src="@drawable/drawing"
-            android:contentDescription="도면"
-            android:background="@null"
-            android:scaleType="fitCenter"
-            android:layout_marginStart="8dp" />
-    </LinearLayout>
-
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:paddingTop="8dp">
-
-            <Button
-                android:id="@+id/btnD423Time0900"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="09:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD423Time1000"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD423Time1100"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="11:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD423Time1200"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD423Time1300"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="13:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD423Time1400"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="14:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD423Time1500"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="15:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD423Time1600"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="16:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD423Time1700"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="17:00"
-                android:layout_marginEnd="4dp"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-
-            <Button
-                android:id="@+id/btnD423Time1800"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="18:00"
-                android:backgroundTint="#570328"
-                android:textColor="#ffffff" />
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <!-- 예약 가능 인원 -->
-    <TextView
-        android:id="@+id/tvD423Seats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="예약 가능 인원: 0/30"
-        android:textSize="14sp"
-        android:textColor="#757575" />
-
-    <!-- 화면 하단 고정 텍스트뷰 -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical">
-    </LinearLayout>
-
-</LinearLayout>
+</ScrollView>
