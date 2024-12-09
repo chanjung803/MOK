@@ -1,113 +1,214 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    android:id="@+id/drawerLayout">
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"/>
-
-    <TextView
+    <!-- 메인 콘텐츠 -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:text="강의실 예약 어플"
-        android:textColor="#000000"
-        android:fontFamily="@font/spoqahansansbold"
-        android:textSize="24dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:text="목관리"
-        android:textColor="#5E1322"
-        android:fontFamily="@font/spoqahansansbold"
-        android:textSize="28dp" />
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"/>
 
-    <TextView
-        android:id="@+id/footerTextView"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="#570328"
-        android:gravity="center"
-        android:textColor="#ffffff"
-        android:textSize="20dp"
-        android:layout_gravity="bottom" />
+        <!-- 상단 텍스트와 햄버거 버튼 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp">
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+            <!-- "강의실 예약 어플" 텍스트 -->
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="강의실 예약 어플"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:fontFamily="@font/spoqahansansbold"
+                android:textSize="24dp" />
 
-    <ImageView
-        android:layout_width="148dp"
-        android:layout_height="100dp"
-        android:scaleType="centerCrop"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/mokicon" />
+            <!-- 햄버거 버튼 -->
+            <ImageButton
+                android:id="@+id/btnHamburger"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:src="@drawable/ic_menu"
+                android:contentDescription="메뉴 열기" />
+        </RelativeLayout>
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:text="목관리"
+            android:textColor="#5E1322"
+            android:fontFamily="@font/spoqahansansbold"
+            android:textSize="28dp" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"/>
 
-    <android.widget.Button
-        android:id="@+id/btnReserveClass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="강의실 예약"
-        android:background="#941934"
-        android:textColor="#ffffff"
-        android:layout_marginBottom="9dp"/>
+        <TextView
+            android:id="@+id/footerTextView"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#570328"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="20dp"
+            android:layout_gravity="bottom" />
 
-    <android.widget.Button
-        android:id="@+id/btnQR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="QR 코드"
-        android:background="#941934"
-        android:textColor="#ffffff"
-        android:layout_marginBottom="9dp"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
-    <android.widget.Button
-        android:id="@+id/btnReturn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="반납하기"
-        android:background="#941934"
-        android:textColor="#ffffff"
-        android:layout_marginBottom="9dp"/>
+        <ImageView
+            android:layout_width="148dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/mokicon" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <android.widget.Button
+            android:id="@+id/btnReserveClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="강의실 예약"
+            android:background="#941934"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="9dp"/>
+
+        <android.widget.Button
+            android:id="@+id/btnQR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="QR 코드"
+            android:background="#941934"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="9dp"/>
+
+        <android.widget.Button
+            android:id="@+id/btnReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="반납하기"
+            android:background="#941934"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="9dp"/>
+
+        <android.widget.Button
+            android:id="@+id/btnSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="설정"
+            android:background="#941934"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="9dp"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <!-- Drawer 메뉴 -->
+    <LinearLayout
+        android:id="@+id/drawerView"
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#FFFFFF"
+        android:padding="16dp"
+        android:layout_gravity="end">
+
+        <TextView
+            android:id="@+id/tvDrawerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="마이페이지"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="로그아웃"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#941934"/>
+
+        <Button
+            android:id="@+id/btnMyReservations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="내 예약 현황"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#941934"/>
+
+        <Button
+            android:id="@+id/btnMyPosts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="내 글 보기"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#941934"/>
+
+        <TextView
+            android:id="@+id/tvSettingsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="설정"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnLanguageSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="언어 설정"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#941934"/>
+
+        <Button
+            android:id="@+id/btnNotificationSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="알림 설정"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#941934"/>
+
+        <Button
+            android:id="@+id/btnCredits"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="크레딧"
+            android:backgroundTint="#941934"/>
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
 
 
-    <android.widget.Button
-        android:id="@+id/btnSetting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="설정"
-        android:background="#941934"
-        android:textColor="#ffffff"
-        android:layout_marginBottom="9dp"/>
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
-
-
-</LinearLayout>

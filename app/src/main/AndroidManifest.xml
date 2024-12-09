@@ -12,36 +12,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hello"
         tools:targetApi="31">
+
+        <!-- 로그인 화면 설정 -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 기존 액티비티들 -->
         <activity
             android:name=".ClassChoiceActivity"
-            android:label="second DayTimePicker" />
+            android:label="Second DayTimePicker" />
         <activity
             android:name=".DaytimeActivity"
-            android:label="second DayTimePicker" />
+            android:label="Second DayTimePicker" />
         <activity
             android:name=".TableActivity"
             android:label="Third Table pick" />
-        <activity android:name=".MarketActivity"></activity>
-        <activity android:name=".NotificationActivity"></activity>
+        <activity android:name=".MarketActivity" />
+        <activity android:name=".NotificationActivity" />
         <activity
             android:name=".ReserveInfoActivity"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".ConfirmActivity"
             android:label="Fourth Confirm" />
         <activity
             android:name=".EndActivity"
             android:label="Last End" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity" />
     </application>
-
 </manifest>
